@@ -7,10 +7,10 @@ input = readLine()
 Print("Your word is \(input!).")
 
 func WordAnalyzer(str:String) {
-	numVowels(str);
-	numConstants(str);
-	length(str);
-	backwards(str);
+	print("Number of Vowels: "+ numVowels(str))
+	print ("Number of Consanants: " + numConstants(str))
+	length(str)
+	backwards(str)
 }
 
 extension String{
@@ -25,7 +25,7 @@ func length(str:String){
 func numVowels(str:String) -> int{
 	var vcount=0
 	if (str.isEmpty=false){
-		Print("String is Empty")
+		print("String is Empty")
 	}
 	for i in 0...str.count {
 		if (str.subscript(i : Int) == "a"){
@@ -47,11 +47,11 @@ func numVowels(str:String) -> int{
 }
 func numConstants(str:String){
 	var vowels = numVowels(str: String)
-	Print("The number of Consanants in " + str + " is " + str.count-vowels)
+	print("The number of Consanants in " + str + " is " + str.count-vowels)
 }
 
 func backwards(str:String){
-let newStr = ""
+var newStr = ""
 for i in str.count...0 {
 		newStr = newStr + str.subscript(i : Int)
 	}
