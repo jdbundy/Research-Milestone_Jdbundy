@@ -1,15 +1,16 @@
 import Swift
 
-Print ("Type a Word here")
+print ("Type a Word here")
 let input: String
 input = readLine()
 
-Print("Your word is \(input!).")
+print("Your word is \(input!).")
+wordAnalyzer(input)
 
-func length(str:String){
+func length(_ str: String){
 	print (str + " is " + str.count + "letters long)
 }
-func numVowels(str:String) -> int{
+func numVowels(_ str: String) -> Int{
 	var vcount=0
 	if (str.isEmpty == false){
 		print("String is Empty")
@@ -31,22 +32,23 @@ func numVowels(str:String) -> int{
 		vcount += 1
 	}
 	return vcount
+	}
 }
-func numConstants(str:String) -> Int{
-	var vowels = numVowels(str: String)
-	var cons = str.count - vowels
+func numConstants(_ str: String) -> Int{
+	let vowels = numVowels(str)
+	let cons = str.count - vowels
 	return cons
 }
 
-func backwardsString(str:String){
+func backwardsString(_ str: String){
 let newStr = String(str.reversed())
 
 	print(newStr)
 }
 
-func WordAnalyzer(str:String) {
-	print("Number of Vowels: "+ numVowels(str:String))
-	print ("Number of Consanants: " + numConstants(str:String))
-	length(str:String)
-	backwardsString(str:String)
+func wordAnalyzer(_ str: String) {
+	print("Number of Vowels: \(numVowels(str))")
+	print ("Number of Consanants: \(numConstants(str))")
+	length(str)
+	backwardsString(str)
 }
