@@ -6,41 +6,28 @@ input = readLine()
 
 Print("Your word is \(input!).")
 
-func WordAnalyzer(str:String) {
-	print("Number of Vowels: "+ numVowels(str))
-	print ("Number of Consanants: " + numConstants(str))
-	length(str)
-	backwards(str)
-}
-
-extension String{
-	 subscript(i: Int) -> String {
-        return String(self[index(startIndex, offsetBy: i)])
-    }
-}
-
 func length(str:String){
 	print (str + " is " + str.count + "letters long)
 }
 func numVowels(str:String) -> int{
 	var vcount=0
-	if (str.isEmpty=false){
+	if (str.isEmpty == false){
 		print("String is Empty")
 	}
-	for i in 0...str.count {
-		if (str.subscript(i : Int) == "a"){
+	for char in str {
+		if (char == "a"){
 		vcount += 1
 	}
-		else if (str.subscript(i : Int) == "i"){
+		else if (char == "i"){
 		vcount += 1
 	}
-	else if (str.subscript(i : Int) == "u"){
+	else if (char == "u"){
 		vcount += 1
 	}
-	else if (str.subscript(i : Int) == "o"){
+	else if (char == "o"){
 		vcount += 1
 	}
-	else if (str.subscript(i : Int) == "e"){
+	else if (char == "e"){
 		vcount += 1
 	}
 	return vcount
@@ -51,10 +38,15 @@ func numConstants(str:String) -> Int{
 	return cons
 }
 
-func backwards(str:String){
-var newStr = ""
-for i in str.count...0 {
-		newStr = newStr + str.subscript(i : Int)
-	}
+func backwardsString(str:String){
+let newStr = String(str.reversed())
+
 	print(newStr)
+}
+
+func WordAnalyzer(str:String) {
+	print("Number of Vowels: "+ numVowels(str:String))
+	print ("Number of Consanants: " + numConstants(str:String))
+	length(str:String)
+	backwardsString(str:String)
 }
