@@ -45,9 +45,10 @@ func numVowels(str:String) -> int{
 	}
 	return vcount
 }
-func numConstants(str:String){
+func numConstants(str:String) -> Int{
 	var vowels = numVowels(str: String)
-	print("The number of Consanants in " + str + " is " + str.count-vowels)
+	var cons = str.count - vowels
+	return cons
 }
 
 func backwards(str:String){
@@ -55,4 +56,5 @@ var newStr = ""
 for i in str.count...0 {
 		newStr = newStr + str.subscript(i : Int)
 	}
+	print(newStr)
 }
